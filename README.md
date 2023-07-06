@@ -22,6 +22,17 @@
       PRIMARY KEY (id)
     );
 
+    -- Création de la table Horaires.
+    CREATE TABLE Horaires (
+      id INT(11) NOT NULL AUTO_INCREMENT,
+      jour ENUM('Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche') NOT NULL,
+      ouverture_matin TIME NOT NULL,
+      fermeture_matin TIME NOT NULL,
+      ouverture_apresmidi TIME NOT NULL,
+      fermeture_apresmidi TIME NOT NULL,
+      PRIMARY KEY (id)
+    );
+
     -- Insertion d'horaires de démarrage pour la table horaires
     INSERT INTO Horaires (jour, ouverture_matin, fermeture_matin, ouverture_apresmidi, fermeture_apresmidi)
     VALUES
