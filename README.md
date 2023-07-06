@@ -1,5 +1,5 @@
 # GarageVParrot
 
-    -- Création de la base de données gparrot.
-    CREATE DATABASE gparrot;
+    -- Création de la base de données garageVParrot.
+    CREATE DATABASE garageVParrot;
 GaraVParrot
