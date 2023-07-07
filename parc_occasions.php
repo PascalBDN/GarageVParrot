@@ -134,7 +134,39 @@ include('includes/navbar.php');
         $(document).ready(function () {
             
        
- 
+ // Écouteur d'événement pour le clic sur le lien "Lire la suite"
+$('.open-modal').click(function (e) {
+    e.preventDefault();
+
+    // Récupérer l'identifiant du véhicule à partir de l'attribut data-id
+    var carId = $(this).data('id');
+
+    // Requête AJAX pour récupérer les détails du véhicule
+    $.ajax({
+        url: 'get_car_details.php', // Chemin vers le script PHP qui récupère les détails du véhicule
+        type: 'GET',
+        data: {
+            id: carId
+        },
+        success: function (response) {
+            // Insérer les détails du véhicule dans la fenêtre modale
+            $('.modal-body').html(response);
+
+            // Initialiser le slider d'images
+            $('.slider').slick({
+                dots: true,
+                arrows: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                adaptiveHeight: true
+            });
+        },
+        error: function (xhr, status, error) {
+            console.log(xhr.responseText);
+        }
+    });
+});
 
 
 
@@ -237,7 +269,9 @@ include('includes/navbar.php');
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css" />
 <!-- ion.rangeSlider JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
-
+<?php 
+include_once 'includes/footer.php';
+?>
 
 </body>
 
