@@ -18,7 +18,7 @@
             </div>
             
             
-            <button type="submit" class="btn btn-primary">Se connecter</button>
+            <button type="submit" class="btn btn-primary mt-2">Se connecter</button>
         </form>
     </div>
 </body>

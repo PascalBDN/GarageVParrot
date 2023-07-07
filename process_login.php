@@ -39,7 +39,7 @@ if ($result->num_rows > 0) {
 
         // Redirection vers la page appropriée en fonction du rôle de l'utilisateur
         if ($row['role'] == 'admin') {
-            header("Location: admin.php");
+            header("Location: apps/cars/create_car.php");
             exit();
         } elseif ($row['role'] == 'staff') {
             header("Location: staff.php");
