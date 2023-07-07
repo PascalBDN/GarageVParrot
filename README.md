@@ -44,35 +44,22 @@
       ('Samedi', '10:30:00', '13:30:00', '15:00:00', '17:30:00'),
       ('Dimanche', '11:00:00', '14:00:00', '15:30:00', '18:30:00');
 
-      CREATE TABLE Voiture (
-          ID INT PRIMARY KEY AUTO_INCREMENT,
-          Marque VARCHAR(255),
-          Modele VARCHAR(255),
-          Annee INT,
-          Prix DECIMAL(10, 2),
-          Kilometrage INT
+      CREATE TABLE cars (
+          id INT(11) NOT NULL AUTO_INCREMENT,
+          img TEXT DEFAULT NULL,
+          modele VARCHAR(255) DEFAULT NULL,
+          prix DECIMAL(10,2) DEFAULT NULL,
+          annee INT(11) DEFAULT NULL,
+          energie VARCHAR(50) DEFAULT NULL,
+          kilometrage INT(11) DEFAULT NULL,
+          description TEXT DEFAULT NULL,
+          securite TEXT DEFAULT NULL,
+          places TEXT DEFAULT NULL,
+          options_list VARCHAR(255) DEFAULT NULL,
+          create_at DATETIME DEFAULT NULL,
+          PRIMARY KEY (id)
         );
-        
-        CREATE TABLE Photos (
-          ID INT PRIMARY KEY AUTO_INCREMENT,
-          VoitureID INT,
-          URL VARCHAR(255),
-          FOREIGN KEY (VoitureID) REFERENCES Voiture(ID) ON DELETE CASCADE
-        );
-        
-        CREATE TABLE Caracteristiques (
-          ID INT PRIMARY KEY AUTO_INCREMENT,
-          VoitureID INT,
-          Caracteristique VARCHAR(255),
-          FOREIGN KEY (VoitureID) REFERENCES Voiture(ID) ON DELETE CASCADE
-        );
-        
-        CREATE TABLE Options (
-          ID INT PRIMARY KEY AUTO_INCREMENT,
-          VoitureID INT,
-          Option VARCHAR(255),
-          FOREIGN KEY (VoitureID) REFERENCES Voiture(ID) ON DELETE CASCADE
-        );
+
 
 
 GaraVParrot
