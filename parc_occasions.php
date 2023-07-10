@@ -78,9 +78,8 @@ include('includes/navbar.php');
                 <p class="card-text">Prix : <?php echo $car['prix']; ?>€</p>
                 <p>Année de mise en circulation : <?php echo $car['annee']; ?></p>
                 <p>Kilométrage : <?php echo $car['kilometrage']; ?> km</p>
-                <a href="#" class="btn btn-sm btn-primary open-modal" data-bs-toggle="modal"
-                    data-bs-target="#carModal" data-id="<?php echo $car['id']; ?>">Détails
-                </a>
+                <a href="car_details.php?id=<?php echo $car['id']; ?>" class="btn btn-sm btn-primary">Détails</a>
+
                 <a href="contact.php?subject=Contact%20-%20<?php echo $car['modele']; ?>%20(<?php echo $car['annee']; ?>)"
                     class="btn btn-sm btn-primary" data-id="<?php echo $car['modele']; ?>">Contactez Nous</a>
 
